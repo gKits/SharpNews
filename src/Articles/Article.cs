@@ -10,7 +10,7 @@ namespace SharpNews {
 
         internal List<IObserver<IArticle>> observers;
 
-        public Article(Author author) {
+        public Article(ref Author author) {
             this.author = author;
             title = "Title";
             body = "Body";
@@ -24,6 +24,7 @@ namespace SharpNews {
         public string GetTitle() => title;
         public string GetBody() => body;
         public bool GetPublished() => published;
+        public List<string> GetComments() => comments;
 
         // Setter
         public void SetTitle(string title) {
@@ -39,6 +40,11 @@ namespace SharpNews {
         public void SetPublish(bool published) { 
             this.published = published;
             Notify();
+        }
+
+        public void AddComment(string body) {
+            comments.Add(body);
+            author.Update(this);
         }
 
         // Observer Methods

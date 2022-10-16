@@ -2,7 +2,7 @@
     public class Program {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine(String.Format("{0}: {1}", "Bob", "Shop"));
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace SharpNews {
     public class PoliticsArticle : Article {
-        public PoliticsArticle(Author author) : base(author) {
+        public PoliticsArticle(ref Author author) : base(ref author) {
             
         }
     }
