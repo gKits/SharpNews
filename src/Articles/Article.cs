@@ -12,11 +12,12 @@ namespace SharpNews {
 
         public Article(ref Author author) {
             this.author = author;
-            title = "Title";
-            body = "Body";
+            title = String.Format("Article by {0}", this.author.name);
+            body = "Lorem epsum";
             comments = new();
             observers = new();
             published = false;
+            this.author.AddArticle(this);
         }
 
         // Getter

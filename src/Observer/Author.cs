@@ -5,9 +5,13 @@ namespace SharpNews {
         public Author(string name) : base(name) {
             articles = new();
         }
+
+        public void AddArticle(IArticle article) {
+            articles.Add(article);
+        }
         
-        public void Publish(ref IArticle article) {
-            article.SetPublish(this, true);
+        public void Publish(int index) {
+            articles[index].SetPublish(this, true);
         }
 
         override public void Update(IArticle article, string message) {

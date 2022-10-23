@@ -1,21 +1,18 @@
 namespace SharpNews {
     public class ArticleFactory : IFactory<IArticle, Author> {
-        public ArticleFactory() {}
-
         public IArticle Create(string type, Author author) {
-            if (type == "TechArticle") {
-                return new TechArticle(ref author);
+            switch(type) {
+                case "TechArticle":
+                    return new TechArticle(ref author);
+                case "PoliticsArticle":
+                    return new PoliticsArticle(ref author);
+                case "BusinessArticle":
+                    return new BusinessArticle(ref author);
+                case "CelebrityArticle":
+                    return new CelebrityArticle(ref author);
+                default:
+                    throw new ArgumentException(String.Format("{0} is not a valid type", type));
             }
-            else if ( type == "PoliticsArticle" ) {
-                return new PoliticsArticle(ref author);
-            }
-            else if ( type == "BusinessArticle" ) {
-                return new BusinessArticle(ref author);
-            }
-            else if ( type == "CelebrityArticle" ) {
-                return new CelebrityArticle(ref author);
-            }
-            throw new ArgumentException(String.Format("{0} is not a valid type", type));
         }
     }
 }
