@@ -1,5 +1,7 @@
 namespace SharpNews {
-    public abstract class ArticleFactory : IFactory<IArticle, Author> {
+    public class ArticleFactory : IFactory<IArticle, Author> {
+        public ArticleFactory() {}
+
         public IArticle Create(string type, Author author) {
             if (type == "TechArticle") {
                 return new TechArticle(ref author);

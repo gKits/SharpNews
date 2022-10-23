@@ -1,13 +1,17 @@
 namespace SharpNews {
     public class Author : Person {
-        public Author(string name) : base(name) {}
+        private List<IArticle> articles;
+
+        public Author(string name) : base(name) {
+            articles = new();
+        }
         
-        public static void Publish(ref IArticle article) {
-            article.SetPublish(true);
+        public void Publish(ref IArticle article) {
+            article.SetPublish(this, true);
         }
 
-        override public void Update(IArticle article) {
-            Console.WriteLine(String.Format("Author: {0} was notified about the article {1}", name, article.GetTitle()));
+        override public void Update(IArticle article, string message) {
+            Console.WriteLine(String.Format("@[Author] {0}: {1}", name, message));
         }
     }
 }

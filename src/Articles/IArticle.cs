@@ -8,9 +8,9 @@ namespace SharpNews {
         List<string> GetComments();
 
         // Setter
-        void SetTitle(string title);
-        void SetBody(string body);
-        void SetPublish(bool published);
+        void SetTitle(Author author, string title);
+        void SetBody(Author author, string body);
+        void SetPublish(Author author, bool published);
 
         //
         void AddComment(string comment);

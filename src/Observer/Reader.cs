@@ -6,8 +6,8 @@ namespace SharpNews {
             article.AddComment(String.Format("{0}: {1}", name, comment));
         }
 
-        override public void Update(IArticle article) {
-            Console.WriteLine(String.Format("[Reader] {0} was notified about the article {1}", name, article.GetTitle()));
+        override public void Update(IArticle article, string message) {
+            Console.WriteLine(String.Format("@[Reader] {0}: {1}", name, message));
         }
     }
 }
