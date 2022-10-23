@@ -32,36 +32,36 @@
             // Articles
             manager.AddSubject(factory.Create("TechArticle", authorJB));
             manager.AddSubject(factory.Create("PoliticsArticle", authorJB));
-            authorJB.Publish(0);
-            authorJB.Publish(1);
+            authorJB.Publish("TechArticle by Jerry Berry");
+            authorJB.Publish("PoliticsArticle by Jerry Berry");
 
 
             manager.AddSubject(factory.Create("CelebrityArticle", authorCS));
             manager.AddSubject(factory.Create("TechArticle", authorCS));
             manager.AddSubject(factory.Create("BusinessArticle", authorCS));
-            authorCS.Publish(0);
-            authorCS.Publish(1);
-            authorCS.Publish(2);
+            authorCS.Publish("TechArticle by Carl Starl");
+            authorCS.Publish("CelebrityArticle by Carl Starl");
+            authorCS.Publish("BusinessArticle by Carl Starl");
 
             manager.AddSubject(factory.Create("TechArticle", authorJF));
             manager.AddSubject(factory.Create("PoliticsArticle", authorJF));
             manager.AddSubject(factory.Create("CelebrityArticle", authorJF));
             manager.AddSubject(factory.Create("BusinessArticle", authorJF));
-            authorJF.Publish(0);
-            authorJF.Publish(1);
-            authorJF.Publish(2);
-            authorJF.Publish(3);
+            authorJF.Publish("TechArticle by Joe Foe");
+            authorJF.Publish("CelebrityArticle by Joe Foe");
+            authorJF.Publish("BusinessArticle by Joe Foe");
+            authorJF.Publish("PoliticsArticle by Joe Foe");
 
             manager.AddSubject(factory.Create("CelebrityArticle", authorPS));
-            authorPS.Publish(0);
+            authorPS.Publish("CelebrityArticle by Peter Seater");
 
             manager.AddSubject(factory.Create("BusinessArticle", authorMC));
             manager.AddSubject(factory.Create("PoliticsArticle", authorMC));
-            authorMC.Publish(0);
-            authorMC.Publish(1);
+            authorMC.Publish("BusinessArticle by Mark Clark");
+            authorMC.Publish("PoliticsArticle by Mark Clark");
 
             // Comments
-            Random rnd = new Random();
+            Random rnd = new();
             int len = manager.GetSubjects().Count;
             reader1.Comment(manager.GetSubjects()[rnd.Next(len)], "I read this article");
             reader1.Comment(manager.GetSubjects()[rnd.Next(len)], "I read this article");

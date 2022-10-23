@@ -10,8 +10,23 @@ namespace SharpNews {
             articles.Add(article);
         }
         
-        public void Publish(int index) {
-            articles[index].SetPublish(this, true);
+        public void Publish(string title) {
+            List<int> foundArticle = new();
+
+            foreach (IArticle article in articles) {
+                if (article.GetTitle() == title)
+                    foundArticle.Add(articles.IndexOf(article));
+            }
+
+            switch (foundArticle.Count) {
+                case 0:
+                    throw new ArgumentException(String.Format("There are no articles with the title {0}", title));
+                case 1:
+                    articles[foundArticle[0]].SetPublish(this, true);
+                    return;
+                default:
+                    throw new ArgumentException(String.Format("There are multiple articles with the title {0}", title));
+            }
         }
 
         override public void Update(IArticle article, string message) {

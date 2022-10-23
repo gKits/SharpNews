@@ -26,6 +26,8 @@ Die Authoren können
 
 ## PAP
 
+![UML](PublishPAP.drawio.svg)
+
 ---
 
 ## Testscenario
@@ -64,13 +66,13 @@ Main()
 
 
     // Publishing Articles
-    author1.Publish(0)
+    author1.Publish("New Intel GPU Benchmarks")
 
-    author2.Publish(0)
-    author2.Publish(1)
+    author2.Publish("Apple stock plumits into abyss")
+    author2.Publish("You won't believe what this monkey did!!")
 
-    author3.Publish(0)
-    author3.Publish(2)
+    author3.Publish("Why Linux is so much better than Windows")
+    author3.Publish("Kim Jong-Un plans new nuclear tests")
 
 
     // Commenting on Articles
